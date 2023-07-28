@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Cajero Automatico</title>
+</head>
+<body>
+
+    <div id="renderArea">
+    </div>
+
+    <form id="formulario" class="formulario">
+        <h1>¡Bienvenido a MoneyWay Bank!</h1>
+        
+        <input placeholder="Usuario" type="text" class="input" id="usuarioHtml">
+
+        <span class="esconder" id="errorUsuario">Usuario incorrecto</span>
+
+        <input placeholder="Contraseña" type="password" class="input" id="passwordHtml">
+
+        <span class="esconder" id="errorPassword">Password incorrecto</span>
+
+        <button type="submit">Ingresar</button>
+
+        <span class="esconder" id="errorDatos">Datos incorrectos</span>
+
+    </form>
+    <div class="esconder" id="saldos" >  
+        <h1> ¡Bienvenido!</h1>
+        <button id="saldoConsultar" class="button" type="button" onclick="mostrarSaldo(event)"> Consultar saldo</button>  
+        <button id="saldoIngresar" class="button" type="button" onclick="depositar(event)">Depositar </button> 
+        <button id="saldoRetirar" class="button" type="button" onclick="retiro(event)" >Retirar</button>
+    </div>
+    <div id="areaSaldos"> 
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
