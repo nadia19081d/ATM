@@ -29,12 +29,35 @@ const usersDB = [
 
 const formulario = document.getElementById('formulario')
 const bienvenidaBotones = document.getElementById('saldos')
+
+const botones_forma = document.getElementsByClassName('button')
 function crearBienvenida(){
     formulario.classList.remove('formulario')
     formulario.classList.add('esconder')
     bienvenidaBotones.classList.remove('esconder')
     bienvenidaBotones.classList.add('formulario')
+    botones_forma.style.width("50%")
+    botones_forma.style.marginTop("30px")
+}
+const headerBoton = document.getElementById('header')
 
+function botonCerrarSesion (){
+    const botonCerrar = document.createElement("button")
+    botonCerrar.setAttribute('type', 'button');
+    botonCerrar.innerText = 'Cerrar sesion';
+    botonCerrar.style.position = "absolute";
+    botonCerrar.style.top = "10px"; /* Ajusta el valor para cambiar la distancia desde la parte superior */
+    botonCerrar.style.right = "10px"; /* Ajusta el valor para cambiar la distancia desde la parte derecha */
+
+    headerBoton.appendChild(botonCerrar)
+    botonCerrar.onclick = function() {
+        formulario.classList.remove('esconder')
+        formulario.classList.add('formulario')
+        areaSaldos.classList.remove('formulario')
+        areaSaldos.classList.add('esconder')
+        headerBoton.removeChild(botonCerrar)
+
+    }
 }
 
 
@@ -104,6 +127,7 @@ function valorarSaldo(saldo){
 }
 const areaSaldos = document.getElementById("areaSaldos")
 function mostrarSaldo(event){
+    botonCerrarSesion ()
     bienvenidaBotones.classList.add('esconder')
     areaSaldos.classList.add('formulario')
     
@@ -122,6 +146,7 @@ function mostrarSaldo(event){
 }
 
 function depositar(event){
+    botonCerrarSesion ()
     bienvenidaBotones.classList.add('esconder')
     areaSaldos.classList.add('formulario')
     let usuarioIngresado = document.getElementById('usuarioHtml').value
@@ -140,14 +165,11 @@ function depositar(event){
     // Poner el input para que se envie el valor ingresado 
     let saldoInput = document.createElement('input')
     saldoInput.setAttribute('placeholder', 'Ingresa el monto')
-    saldoInput.classList.add('depositoInput')
     saldoInput.value 
     areaSaldos.appendChild(titulo_deposito)
     areaSaldos.appendChild(parrafo_saldo)
     areaSaldos.appendChild(saldoInput)
     areaSaldos.appendChild(boton_deposito)
-
-    
     
 
     boton_deposito.onclick = function() {
@@ -192,20 +214,10 @@ function agregarVentaDepositoRetiro (nuevoDeposito){
     saldoNuevo.style.marginTop = '20px' 
     saldoNuevo.innerHTML = "Tu saldo despues del retiro es: $ " +  nuevoDeposito
     areaSaldos.appendChild(saldoNuevo)
-    const boton_salida = document.createElement("button"); 
-    boton_salida.setAttribute('type', 'button');
-    boton_salida.innerText = 'Cerrar sesion';
-    areaSaldos.appendChild(boton_salida)
-    boton_salida.onclick = function() {
-        formulario.classList.remove('esconder')
-        formulario.classList.add('formulario')
-        areaSaldos.classList.remove('formulario')
-        areaSaldos.classList.add('esconder')
-    }
-    
 }
 
 function retiro(event){
+    botonCerrarSesion ()
     bienvenidaBotones.classList.add('esconder')
     areaSaldos.classList.add('formulario')
     let usuarioIngresado = document.getElementById('usuarioHtml').value
@@ -224,7 +236,6 @@ function retiro(event){
     // Poner el input para que se envie el valor ingresado 
     let saldoInput = document.createElement('input')
     saldoInput.setAttribute('placeholder', 'Ingresa el monto')
-    saldoInput.classList.add('depositoInput')
     saldoInput.value 
     areaSaldos.appendChild(titulo_deposito)
     areaSaldos.appendChild(parrafo_saldo)
