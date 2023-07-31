@@ -51,11 +51,8 @@ function botonCerrarSesion (){
 
     headerBoton.appendChild(botonCerrar)
     botonCerrar.onclick = function() {
-        formulario.classList.remove('esconder')
-        formulario.classList.add('formulario')
-        areaSaldos.classList.remove('formulario')
-        areaSaldos.classList.add('esconder')
-        headerBoton.removeChild(botonCerrar)
+
+        location.reload();
 
     }
 }
