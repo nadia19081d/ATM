@@ -60,7 +60,7 @@ input:active {
 
 .error{
     color: rgb(66, 16, 16);
-    margin-top: -15px;
+    padding: 5px;
 }
 
 .esconder{

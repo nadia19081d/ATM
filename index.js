@@ -66,7 +66,7 @@ function validar(usuario, password){
         if(usuario === ''){
             mostrarError('Usuario')
         }
-        else if(password === ''){
+        else if(password === '' || password !== usersDB[index].pass){
             mostrarError('Password')
         }
         else if(usuario === usersDB[index].user && password === usersDB[index].pass){
