@@ -69,12 +69,13 @@ function validar(usuario, password){
         else if(password === ''){
             mostrarError('Password')
         }
-        else if(usuario !== usersDB[index].user && password !== usersDB[index].pass){
-            mostrarError('Datos')
-        }
-        else{
+        else if(usuario === usersDB[index].user && password === usersDB[index].pass){
             console.log('Bienvenido', usuario);
             crearBienvenida()
+        }
+        else{
+            
+            mostrarError('Datos')
         }
 
     }
