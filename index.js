@@ -210,7 +210,7 @@ function depositar(event){
 function agregarVentaDepositoRetiro (nuevoDeposito){
     let saldoNuevo = document.createElement('p')
     saldoNuevo.style.marginTop = '20px' 
-    saldoNuevo.innerHTML = "Tu saldo despues del retiro es: $ " +  nuevoDeposito
+    saldoNuevo.innerHTML = "Tu saldo actual es: $ " +  nuevoDeposito
     areaSaldos.appendChild(saldoNuevo)
 }
 
