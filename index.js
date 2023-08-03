@@ -252,7 +252,7 @@ function retiro(event){
         if (nuevoDeposito >10 && nuevoDeposito <990 && deposito >0){
             saldoInput.style.display = "none";
             boton_deposito.style.display = "none"; 
-            parrafo_saldo.style.display = "none"
+            parrafo_saldo.style.display = "none";
             
             agregarVentaDepositoRetiro (nuevoDeposito) 
             
