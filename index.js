@@ -177,6 +177,7 @@ function depositar(event){
         if (nuevoDeposito >10 && nuevoDeposito <990 && deposito >0){
             saldoInput.style.display = "none";
             boton_deposito.style.display = "none"; 
+            parrafo_saldo.style.display = "none"
             agregarVentaDepositoRetiro (nuevoDeposito) 
         } else if(nuevoDeposito >990) {
             let errorNegativo = document.createElement('p')
@@ -210,7 +211,7 @@ function depositar(event){
 function agregarVentaDepositoRetiro (nuevoDeposito){
     let saldoNuevo = document.createElement('p')
     saldoNuevo.style.marginTop = '20px' 
-    saldoNuevo.innerHTML = "Tu saldo actual es: $ " +  nuevoDeposito
+    saldoNuevo.innerHTML = "Tu saldo despues de la operacion es : $ " +  nuevoDeposito
     areaSaldos.appendChild(saldoNuevo)
 }
 
@@ -251,6 +252,7 @@ function retiro(event){
         if (nuevoDeposito >10 && nuevoDeposito <990 && deposito >0){
             saldoInput.style.display = "none";
             boton_deposito.style.display = "none"; 
+            parrafo_saldo.style.display = "none"
             
             agregarVentaDepositoRetiro (nuevoDeposito) 
             
