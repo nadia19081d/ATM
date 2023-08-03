@@ -181,7 +181,7 @@ function depositar(event){
         } else if(nuevoDeposito >990) {
             let errorNegativo = document.createElement('p')
                 errorNegativo.style.marginTop = '20px' 
-                errorNegativo.innerHTML = "Excediste el limite permitido" 
+                errorNegativo.innerHTML = "Excediste el limite permitido en tu cuenta" 
                 areaSaldos.appendChild(errorNegativo)
             setTimeout(()=>{
                 
